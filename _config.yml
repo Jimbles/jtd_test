@@ -1,8 +1,14 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: ELEC2645 Docs
+author: James Avery
+email: j.p.avery@leeds.ac.uk
+description: Reference documentation for the C code used in the ELEC2645 Embedded Systems Project Module.
 theme: just-the-docs
 
 url: https://just-the-docs.github.io
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  Module Homepage: https://courses.leeds.ac.uk/g40036
+  GitHub Repository: https://github.com/EEE-ELEC2645
+
+color_scheme: dark
+enable_copy_code_button: true
