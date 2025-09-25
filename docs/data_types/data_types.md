@@ -1,11 +1,11 @@
 ---
-title: navindex
+title: Data Types
 nav_order: 2
 layout: default
 ---
 
 
-# stuff
+# Basic Data Types
 
 things
 
