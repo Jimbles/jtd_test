@@ -498,8 +498,9 @@ if (lives_left == 0) {  // no retries remaining
 
 Break code into small, focused functions. This improves testing, reuse, and readability. There’s no
 hard line, but if a function grows beyond __~20–40 lines__, consider splitting it.
+The [NASA Power of Ten Guidelines](https://en.wikipedia.org/wiki/The_Power_of_10:_Rules_for_Developing_Safety-Critical_Code) suggest limiting the code within a function to a single printed A4 page.
 
-No blank lines at the __start__ or __end__ of a function. Use descriptive names.
+No blank lines at the __start__ or __end__ of a function. Use descriptive names, a general rule of thumb is that the name should include a verb, to say what the code _does_.
 
 __One-line function__
 
@@ -519,32 +520,38 @@ bool in_range(int x, int lo, int hi) {
 }
 ```
 
-__Single-exit with cleanup (since C has no RAII)__
+__Single-exit with cleanup__
+
+Writing functions with a single return point makes cleanup and error handling easier because all resource releases and final actions happen in one predictable place. If you have multiple `return` statments then it is harder to understand when the functions stops, and what code it will return.
+A single return also improves maintainability and reduces the risk of leaks or inconsistent exit paths as the function grows in complexity.
 
 ```c
 #include <stdio.h>
+#include <stdbool.h>
 
-int copy_text(const char *src_path, const char *dst_path) {
-  FILE *in = NULL, *out = NULL;
-  int rc = -1;
-  int ch;
+int sum_to_n(int n) {
+  bool ok = false;
+  int sum = 0;
 
-  in = fopen(src_path, "r");
-  if (!in) goto done;
-
-  out = fopen(dst_path, "w");
-  if (!out) goto done;
-
-  while ((ch = fgetc(in)) != EOF) {
-    if (fputc(ch, out) == EOF) goto done;
+  if (n >= 0 && n <= 10000) {   // basic guard (choose a sensible upper bound)
+    ok = true;
+    for (int i = 1; i <= n; i++) {
+      sum += i;
+    }
+    printf("sum(1..%d) = %d\n", n, sum);
+  } else {
+    printf("invalid n: %d\n", n);
   }
-  rc = 0;
 
-done:
-  if (out) fclose(out);
-  if (in) fclose(in);
-  return rc;
+  return ok ? 0 : -1;           // single exit
 }
+
+int main(void) {
+  sum_to_n(5);     // prints: sum(1..5) = 15
+  sum_to_n(-3);    // prints: invalid n: -3
+  return 0;
+}
+
 ```
 
 ---
