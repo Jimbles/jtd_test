@@ -32,10 +32,7 @@ Professional programmers stick to very strict code style guidelines and indeed, 
 by their employers. Ensuring that all employees use the same coding style means that they can all
 easily read each other’s code.
 
-We’ll follow a clear, consistent __C__ style—similar in spirit to well-known C++ guides—but adapted
-to C’s idioms (functions, headers, `struct`s, error codes, and careful memory usage).
-
-Given the age of the programming language there a many different style guides. For example NASA have their own guidelines to keep code understandable and testable [detailed in this journal article](https://ieeexplore.ieee.org/document/1642624) aka [the Power of Ten](https://en.wikipedia.org/wiki/The_Power_of_10:_Rules_for_Developing_Safety-Critical_Code) which are summarised [in this video](https://youtu.be/GWYhtksrmhE?si=5YLFxiuVCObyzDX4)
+Given the age of the programming language there are many different style guides. For example NASA have their own guidelines to keep code understandable and testable [detailed in this journal article](https://ieeexplore.ieee.org/document/1642624) aka [the Power of Ten](https://en.wikipedia.org/wiki/The_Power_of_10:_Rules_for_Developing_Safety-Critical_Code) which are summarised [in this video](https://youtu.be/GWYhtksrmhE?si=5YLFxiuVCObyzDX4)
 
 We will follow the typical conventions, based on [the C Bible](https://en.wikipedia.org/wiki/The_C_Programming_Language) sometimes shortened to K&R after the authors,
 and then expanded into things like [Google's C++ Guide](https://google.github.io/styleguide/cppguide.html).

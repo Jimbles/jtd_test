@@ -6,8 +6,9 @@ description: "ELEC2645 Overview"
 ---
 
 
-# Welcome to ELEC2645
+# Welcome to ELEC2645 - Embedded Systems Project
 
-This is the reference website for the lab work during the module
+This is the reference website for the lab work during the ELEC2645 module. It covers the basics of `C` programming and the concepts 
 
-## Sections
+## Cheatsheets - Covering the basics
+

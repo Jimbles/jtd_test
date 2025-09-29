@@ -4,10 +4,13 @@ email: j.p.avery@leeds.ac.uk
 description: Reference documentation for the C code used in the ELEC2645 Embedded Systems Project Module.
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://eee-elec2645.github.io/
+
+favicon_ico: "/assets/images/favicon.ico"
+
 
 aux_links:
-  Module Homepage: https://courses.leeds.ac.uk/g40036
+  Minerva Homepage: https://minerva.leeds.ac.uk/ultra/courses/_567925_1/outline
   GitHub Repository: https://github.com/EEE-ELEC2645
 
 color_scheme: dark
